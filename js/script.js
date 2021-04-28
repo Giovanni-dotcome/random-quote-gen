@@ -5,3 +5,5 @@ var app = new Vue({
     },
     methods: {}
 })
+var color = randomColor();
+console.log(color);
