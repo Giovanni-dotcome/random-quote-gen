@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
     <link rel="stylesheet" href="css/frame.css">
     <link rel="stylesheet" href="css/main.css">
@@ -12,7 +13,22 @@
     <title>Random Quote Generator</title>
 </head>
 <body>
-    <div id="root">
+    <div id="root" v-bind:style="{backgroundColor: color}">
+        <div class="container flex-row-center">
+            <div class="quote-gen">
+                <div v-on:mouseenter="switchJoke()" v-on:mouseleave="switchJoke()" class="randomQuote flex-row-center">
+                    <div v-if="visible" class="setup">{{setup}}</div>
+                    <div v-else class="punchline">{{punchline}}</div>
+                </div>
+                <div class="buttons flex-row-between">
+                    <div class="flex-row-center">
+                        <div class="button"><a href="https://github.com/Giovanni-dotcome"><i v-bind:style="{color: color}" class="fab fa-github"></i></a></div>
+                        <div class="button"><a href=""><i v-bind:style="{color: color}" class="fab fa-linkedin"></i></a></div>
+                    </div>
+                    <div v-bind:style="{backgroundColor: color}" class="button quote-btn" v-on:click="changeColor()">New Joke</div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>

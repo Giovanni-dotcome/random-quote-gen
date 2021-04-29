@@ -1,0 +1,46 @@
+body {
+    font-family: Roboto;
+}
+.buttons {
+    padding: 1em;
+}
+.button{
+    color: #FFF;
+    position: relative;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.button i {
+    font-size: 2em;
+    padding: .1em;
+}
+.button:hover{
+    opacity: .6;
+}
+.quote-gen {
+    background-color: white;
+    font-size: 1.7em;
+    width: 450px;
+}
+.quote-btn {
+    padding: .5em .75em;
+}
+.randomQuote {
+    height: 150px;
+    text-align: center;
+    margin: 1em;
+    animation: pulse 1.5s infinite;
+}
+.randomQuote:hover {
+  animation: none;
+}
+
+@keyframes pulse {
+  0% {transform :scale(.9);}
+  70% {
+    transform: scale(1);
+  }
+    100% {
+    transform: scale(.9);
+  }
+}
